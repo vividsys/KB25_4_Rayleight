@@ -1,0 +1,39 @@
+// здесь перечисляем переменные попапов, на которых необходимо скрыть хедер
+.header(
+    v-bind:class="[{'header_hidden': this.modals.popupVideo1.active || isActiveImg || this.modals.popupVideo2.active }," +
+    "{'sidebar_active' : !this.toggleProcess && (this.modals.popupLifeSupport.active || "+
+    "this.modals.popupLifeSupport.active ||"+
+    "this.modals.lifeSidebar1.active ||"+
+    "this.modals.lifeSidebar2.active ||"+
+    "this.modals.lifeSidebar3.active ||"+
+    "this.modals.lifeSidebar4.active ||"+
+    "this.modals.lifeSidebar5.active ||"+
+    "this.modals.experimentsSidebar1.active ||"+
+    "this.modals.experimentsSidebar2.active ||"+
+    "this.modals.experimentsSidebar3.active ||"+
+    "this.modals.experimentsSidebar4.active ||"+
+    "this.modals.experimentsSidebar5.active ||"+
+    "this.modals.experimentsSidebar6.active ||"+
+    "this.modals.experimentsSidebar7.active ||"+
+    "this.modals.structureSidebar1.active ||"+
+    "this.modals.structureSidebar2.active ||"+
+    "this.modals.structureSidebar3.active ||"+
+    "this.modals.structureSidebar4.active ||"+
+    "this.modals.structureSidebar5.active ||"+
+    "this.modals.structureSidebar6.active ||"+
+    "this.modals.structureSidebar7.active ||"+
+    "this.modals.structureSidebar8.active ||"+
+    "this.modals.structureSidebar9.active ||"+
+    "this.modals.structureSidebar10.active ||"+
+    "this.modals.structureSidebar11.active "+
+    ") }]"
+)
+
+    .header__container
+        .header__text {{ pages.main.title }}
+        .header__pagination
+            .swiper-pagination.swiper-pagination_theme_blue
+        .header__link.ico.ico__hand-swipe-left
+        .header__lang
+            .header__lang-text.header__lang-text_active Ru
+            .header__lang-text En

@@ -1,0 +1,15 @@
+mixin pageSwitcher(slideNum, contentVariable)
+   .page-switcher(
+                      data-swiper-parallax="-300"
+                      v-on:click="goToSlide("+slideNum+")"
+                  )
+                  if slideNum < 10
+                      .page-switcher__num .0#{slideNum}
+                  else
+                    .page-switcher__num .#{slideNum}
+
+                  .page-switcher__content
+                      .page-switcher__text(
+                        v-html=contentVariable
+                      )
+                      .ico.ico_bg_blue.ico__arr-right

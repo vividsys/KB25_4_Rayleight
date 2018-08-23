@@ -1,0 +1,38 @@
+.popup-lifeSupport.popup.swiper-no-swiping(
+	data-popup = 'popupLifeSupport'
+	v-bind:class="{ 'popup_active': this.modals.popupLifeSupport.active}"
+)
+    .container
+        .column.column__1x.fix1
+            .subtitle(
+            v-html="popups.lifeSupport.title"
+            )
+
+            .text(
+            v-html="popups.lifeSupport.text"
+            )
+        .column.column__2x
+            .man-scheme
+                .man-scheme__man
+                    .smallTitle.n1(v-on:click="showModal('lifeSidebar5')") {{popups.lifeSupport.subtext1}}
+                    .smallTitle.n2(v-on:click="showModal('lifeSidebar1')") {{popups.lifeSupport.subtext2}}
+                    .smallTitle.n3(v-on:click="showModal('lifeSidebar2')") {{popups.lifeSupport.subtext3}}
+                    .smallTitle.n4(v-on:click="showModal('lifeSidebar3')") {{popups.lifeSupport.subtext4}}
+                    .smallTitle.n5(v-on:click="showModal('lifeSidebar4')") {{popups.lifeSupport.subtext5}}
+
+        .column.column__1x.fix2
+            .text(v-html="popups.lifeSupport.text2")
+        .ico.ico_neon.ico__arr-popup-down(
+            v-on:click="closeModal('popupLifeSupport', false)"
+        )
+        .popupLifeSupport-close.popup-close(
+            v-show="(!this.modals.lifeSidebar1.active && !this.modals.lifeSidebar2.active && !this.modals.lifeSidebar3.active && !this.modals.lifeSidebar4" +
+            ".active && !this.modals.lifeSidebar5.active)"
+            v-bind:class="{ 'popup-close_active': this.modals.popupLifeSupport.active }"
+            v-on:click="closeModal('popupLifeSupport', false)"
+        )
+        .bg-grid
+    - var slidesCount = 5
+    while slidesCount > 0
+        +sidebarNoImg(slidesCount--, "life")
+

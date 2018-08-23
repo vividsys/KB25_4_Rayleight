@@ -1,0 +1,20 @@
+.intro(
+    v-bind="swipeIntroInit, waitUser"
+)
+    video.intro__bg-video(
+        autoplay="autoplay"
+        loop="loop"
+    )
+        source(
+            src="video/bg-main.mp4"
+            type="video/mp4"
+        )
+    .intro__title(
+        v-html="pages.intro.block1"
+        )
+    .intro__lang
+        .intro__lang-text.intro__lang-text_active Ru
+        .intro__lang-text En
+    .intro__scroll
+        .ico.ico__hand-touch
+        | {{ pages.intro.block2 }}

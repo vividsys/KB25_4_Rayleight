@@ -1,0 +1,49 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title App project
+        meta(
+            name="keywords"
+            content=""
+        )
+        meta(
+            name="description"
+            content=""
+        )
+        meta(
+            name="viewport"
+            content="width=1920, height=1080, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+        )
+        meta(
+            name="format-detection"
+            content="telephone=no"
+        )
+        meta(
+            name="skype-toolbar"
+            content="skype-toolbar-parser-compatible"
+        )
+        link(
+            rel="stylesheet"
+            href="css/app-project.css"
+        )
+    body
+        #app
+            include ../blocks/page-switcher/page-switcher
+            include ../blocks/common/mixin
+            //include ../blocks/popup-photos/popup-photos
+            include ../blocks/intro/intro
+            include ../blocks/header/header
+            .swiper-container.swiper-container-main(
+                v-bind="swipeInit"
+            )
+                .swiper-wrapper
+                    .swiper-slide
+                        include ../blocks/pages/main/index
+                    .swiper-slide
+                        include ../blocks/pages/page1/index
+                    .swiper-slide
+                        include ../blocks/pages/page2/index
+
+        script(src="js/app-project-base.js")
+        script(src="js/app-project-run.js")

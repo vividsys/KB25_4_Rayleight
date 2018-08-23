@@ -1,0 +1,15 @@
+.page-main.wrapper
+  .container
+    .column.column__1x
+      .title {{pages.main.block1.title}}
+      .text {{pages.main.block1.text}}
+    .column.column__3x.fix1
+      .decorText.decorText1 {{pages.main.block2.text1}}
+      .decorText.decorText2 {{pages.main.block2.text2}}
+      img.img1(src='img/objects/main_1.png')
+      img.img2(src='img/objects/main_2.png')
+      .link.link1(v-on:click="goToSlide(1, 500)") {{pages.main.block2.link}}
+        span .01
+      .link.link2(v-on:click="goToSlide(2, 500)") {{pages.main.block3.link}}
+        span .02
+  .bg-grid

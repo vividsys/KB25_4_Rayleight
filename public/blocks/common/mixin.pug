@@ -1,0 +1,50 @@
+mixin sidebarWithImg(num, page)
+    - var sidebarName = page + "Sidebar" + num
+        .sidebar-wrapper.swiper-no-swiping(
+            class = sidebarName
+            data-sidebar = sidebarName
+            v-bind:class="{ 'sidebar-container_active':  this.modals."+sidebarName+".active , 'current': (this.currentSidebar == '"+sidebarName+"')}"
+        )
+            .sidebar-close-container(
+                v-on:click="closeModal('"+sidebarName+"')"
+            )
+            .sidebar-container
+                .sidebar__block-with-scroll
+                    .sidebar__photo
+                        img(
+                        src="img/sidebars/"+sidebarName+".jpg"
+                        )
+                    .title(
+                    v-html="sidebars."+sidebarName+".title"
+                    )
+                    .text(
+                    v-html="sidebars."+sidebarName+".text"
+                    )
+                .sidebar-close(
+                class = sidebarName + "-close"
+                        v-bind:class="{ 'sidebar-close_active': this.modals."+sidebarName+".active }"
+                                v-on:click="closeModal('"+sidebarName+"', false)"
+                )
+mixin sidebarNoImg(num, page)
+    - var sidebarName = page + "Sidebar" + num
+        .sidebar-wrapper.swiper-no-swiping(
+            class = sidebarName
+            data-sidebar = sidebarName
+            v-bind:class="{ 'sidebar-container_active':  this.modals."+sidebarName+".active , 'current': (this.currentSidebar == '"+sidebarName+"')}"
+        )
+            .sidebar-close-container(
+                v-on:click="closeModal('"+sidebarName+"')"
+            )
+            .sidebar-container
+                .sidebar__block-with-scroll
+                    .title(
+                    v-html="sidebars."+sidebarName+".title"
+                    )
+                    .text(
+                    v-html="sidebars."+sidebarName+".text"
+                    )
+                .sidebar-close(
+                class = sidebarName + "-close"
+                        v-bind:class="{ 'sidebar-close_active': this.modals."+sidebarName+".active }"
+                                v-on:click="closeModal('"+sidebarName+"', false)"
+                )
